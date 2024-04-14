@@ -29,16 +29,16 @@ class Drawer:
         char_list[new_size - 1][new_size - 1] = chr(9608)
 
         char_list[maze.get_start().get_x() * 2][0] = chr(9608)
-        char_list[maze.get_start().get_x() * 2 + 1][0] = chr(9673)
-        char_list[maze.get_end().get_x() * 2 + 1][new_size - 1] = chr(9673)
+        char_list[maze.get_start().get_x() * 2 + 1][0] = "*"
+        char_list[maze.get_end().get_x() * 2 + 1][new_size - 1] = "*"
         char_list[maze.get_end().get_x() * 2 + 2][new_size - 1] = chr(9608)
 
         for i in range(len(solution)):
-            char_list[2 * solution[i].get_x() + 1][2 * solution[i].get_y() + 1] = chr(9673)
+            char_list[2 * solution[i].get_x() + 1][2 * solution[i].get_y() + 1] = "*"
             if (i < len(solution) - 1):
                 dx = solution[i + 1].get_x() - solution[i].get_x()
                 dy = solution[i + 1].get_y() - solution[i].get_y()
-                char_list[2 * (solution[i].get_x()) + dx + 1][2 * solution[i].get_y() + dy + 1] = chr(9673)
+                char_list[2 * (solution[i].get_x()) + dx + 1][2 * solution[i].get_y() + dy + 1] = "*"
 
         result_string = ''
         for i in range(new_size):

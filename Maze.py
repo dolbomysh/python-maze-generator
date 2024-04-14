@@ -76,12 +76,12 @@ class Maze:
     def get_neighbour(self, cell: Cell):
         neighbours = []
         for dx in [-1, 1]:
-            if 0 <= cell.get_x() + dx < self.get_size() and not(self.check_wall(cell, self.get_cell(cell.get_x() + dx,
-                                                                                                cell.get_y()))):
+            if 0 <= cell.get_x() + dx < self.get_size() and not (self.check_wall(cell, self.get_cell(cell.get_x() + dx,
+                                                                                                     cell.get_y()))):
                 neighbours.append(self.get_cell(cell.get_x() + dx, cell.get_y()))
         for dy in [-1, 1]:
-            if 0 <= cell.get_y() + dy < self.get_size() and not(self.check_wall(cell, self.get_cell(cell.get_x(),
-                                                                                                cell.get_y() + dy))):
+            if 0 <= cell.get_y() + dy < self.get_size() and not (self.check_wall(cell, self.get_cell(cell.get_x(),
+                                                                                                     cell.get_y() + dy))):
                 neighbours.append(self.get_cell(cell.get_x(), cell.get_y() + dy))
         else:
             return neighbours

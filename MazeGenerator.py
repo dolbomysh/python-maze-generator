@@ -10,9 +10,9 @@ class MazeGenerator:
 
     @staticmethod
     def generate_maze(algorithm: str, size: int):
-        if algorithm == "dfs":
+        if algorithm == "DFS":
             return MazeGenerator.dsf_generation(size)
-        elif algorithm == "mst":
+        elif algorithm == "MST":
             return MazeGenerator.mst_generation(size)
 
     @staticmethod
@@ -81,7 +81,7 @@ class MazeGenerator:
             for edge in grid_node_graph.get_neighbours(grind_size * i):
                 heapq.heappush(considered_edges, edge)
 
-            if (i < grind_size - 1):
+            if i < grind_size - 1:
                 maze.get_cell(0, i).create_wall("top")
                 maze.get_cell(size - 1, i).create_wall("bottom")
                 maze.get_cell(i, 0).create_wall("left")

@@ -1,6 +1,5 @@
 from Drawer import Drawer
 from Maze import Maze
-import os
 
 
 class FileLoader:
