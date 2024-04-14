@@ -1,6 +1,7 @@
 import argparse
 
 from Drawer import Drawer
+from FileLoader import FileLoader
 from MazeGenerator import MazeGenerator
 from Solver import Solver
 
@@ -13,7 +14,13 @@ args = parser.parse_args()
 
 maze = MazeGenerator.generate_maze(args.algorithm, args.size)
 
-if args.solution == "yes":
-    print(Drawer.convert_maze(maze, Solver.path_in_maze(maze)))
+if args.output == "console":
+    if args.solution == "yes":
+        print(Drawer.convert_maze(maze, Solver.path_in_maze(maze)))
+    else:
+        print(Drawer.convert_maze(maze))
 else:
-    print(Drawer.convert_maze(maze))
+    if args.solution == "yes":
+        FileLoader.save(maze, args.output, Solver.path_in_maze(maze))
+    else:
+        FileLoader.save(maze, args.output)
