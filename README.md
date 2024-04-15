@@ -22,3 +22,15 @@
 | *FileLoader*    	| Загрузка лабиринтов из/в файл 	|                                                                                                                                                                                                                	| *def load_maze(str) -> Maze* - загрузка лабиринта из файла<br><br> *def save(self, Maze, str, list[Cell] = []) -> None* - сохранение лабиринта в файл                                                                                                                                                                 	|
 | *Graph*| Вспомогательный класс, дабы разгрузить функции генерации | *__size* - размер графа<br><br> *__adjacency_list* - список смежности| *def add_edge(self, int,  int, int)-> None* - добавление ребра<br><br> *def get_neighbours(self, int) -> list[Edge]* - получение соседей вершины|
 |*Edge*| Маленький класс для графа| *vertex_to <br> vertex_from <br> weight* - концы и вес ребра||
+
+
+#### Запуск
+Из командной строки <br>
+*python3 main.py algorithm --size --solution --output*
+
+*algorithm* - алгоритм генерации лабиринта (DFS/MST) <br>
+*size* - размер лабринта <br>
+*solution* - вывод решения (yes/no) <br>
+*output* - место вывода (путь к файлу / console)
+    
+
