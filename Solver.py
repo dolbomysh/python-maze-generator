@@ -21,7 +21,7 @@ class Solver:
     @staticmethod
     def path_by_dfs(maze: Maze, cell: Cell, parent: list[list[Cell]], is_used: list[list[bool]]):
         is_used[cell.get_x()][cell.get_y()] = True
-        neighbours = maze.get_neighbour(cell)
+        neighbours = maze.get_neighbours(cell)
         for neighbour_cell in neighbours:
             if not (is_used[neighbour_cell.get_x()][neighbour_cell.get_y()]):
                 parent[neighbour_cell.get_x()][neighbour_cell.get_y()] = cell
