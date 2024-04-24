@@ -15,21 +15,22 @@ def load(path: str):
             maze_as_string_list.append(line)
         maze = Maze(True, len(maze_as_string_list) // 2)
 
+    shaded_cell = chr(9608)
     for i in range(maze.get_size()):
-        if maze_as_string_list[i][0] != chr(9608):
+        if maze_as_string_list[i][0] != shaded_cell:
             maze.set_start(maze.get_cell(i // 2, 0))
-        if maze_as_string_list[i][2 * maze.get_size()] != chr(9608):
+        if maze_as_string_list[i][2 * maze.get_size()] != shaded_cell:
             maze.set_end(maze.get_cell(i // 2, maze.get_size() - 1))
 
     for i in range(maze.get_size()):
         for j in range(maze.get_size()):
-            if maze_as_string_list[2 * i][2 * j + 1] != chr(9608):
+            if maze_as_string_list[2 * i][2 * j + 1] != shaded_cell:
                 maze.get_cell(i, j).destroy_wall("top")
-            if maze_as_string_list[2 * i + 2][2 * j + 1] != chr(9608):
+            if maze_as_string_list[2 * i + 2][2 * j + 1] != shaded_cell:
                 maze.get_cell(i, j).destroy_wall("bottom")
-            if maze_as_string_list[2 * i + 1][2 * j] != chr(9608):
+            if maze_as_string_list[2 * i + 1][2 * j] != shaded_cell:
                 maze.get_cell(i, j).destroy_wall("left")
-            if maze_as_string_list[2 * i + 1][2 * j + 2] != chr(9608):
+            if maze_as_string_list[2 * i + 1][2 * j + 2] != shaded_cell:
                 maze.get_cell(i, j).destroy_wall("right")
 
     return maze

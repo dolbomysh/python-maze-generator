@@ -2,7 +2,10 @@ from Cell import Cell
 
 
 class Maze:
-    def __init__(self, walls: bool, size: int = 10):
+
+    default_maze_size = 10
+
+    def __init__(self, walls: bool, size: int = default_maze_size):
         self.__size = size
         self.__maze = [[Cell(x, y, walls) for y in range(self.__size)] for x in range(self.__size)]
         self.__start = self.__maze[0][0]

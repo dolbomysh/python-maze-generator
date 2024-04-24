@@ -54,10 +54,11 @@ def mst_generation(size: int):
     maze = Maze(False, size)
     grind_size = size + 1
     grid_node_graph = Graph((grind_size * grind_size))
+    max_edge_weight = 100
     for i in range(grind_size - 1):
         for j in range(grind_size - 1):
-            grid_node_graph.add_edge(i + j * grind_size, i + 1 + j * grind_size, random.randint(1, 100))
-            grid_node_graph.add_edge(i + j * grind_size, i + (j + 1) * grind_size, random.randint(1, 100))
+            grid_node_graph.add_edge(i + j * grind_size, i + 1 + j * grind_size, random.randint(1, max_edge_weight))
+            grid_node_graph.add_edge(i + j * grind_size, i + (j + 1) * grind_size, random.randint(1, max_edge_weight))
 
     used_vertices = set()
     considered_edges = []
