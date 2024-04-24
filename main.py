@@ -1,9 +1,9 @@
 import argparse
 
-from Drawer import Drawer
-from FileLoader import FileLoader
-from MazeGenerator import MazeGenerator
-from Solver import Solver
+import Drawer
+import FileLoader
+import MazeGenerator
+import Solver
 
 parser = argparse.ArgumentParser()
 parser.add_argument("algorithm", type=str, help="DFS or MST generation algorithm")
